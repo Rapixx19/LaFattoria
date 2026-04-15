@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { Suspense, useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { createBrowserClient } from '@/lib/supabase/client';
 import { createBill } from '../lib/actions';
@@ -16,11 +16,15 @@ import type { BillType, BillItem, Client, Service } from '../lib/types';
 
 const STEPS = ['Tipo', 'Cliente', 'Data', 'Prestazioni', 'Pagamento'];
 
-export default function NewBillPage() {
+function NewBillContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const preselectedClientId = searchParams.get('clientId');
+
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [initialized, setInitialized] = useState(false);
 
   // Data
   const [clients, setClients] = useState<Client[]>([]);
@@ -45,12 +49,24 @@ export default function NewBillPage() {
         supabase.from('services').select('*').eq('active', true).order('sort_order'),
       ]);
 
-      if (clientsRes.data) setClients(clientsRes.data);
-      if (servicesRes.data) setServices(servicesRes.data);
+      if (clientsRes.data) {
+        const clientList = clientsRes.data as unknown as Client[];
+        setClients(clientList);
+        // Pre-select client if provided in URL and valid
+        if (preselectedClientId && !initialized) {
+          const clientExists = clientList.some((c) => c.id === preselectedClientId);
+          if (clientExists) {
+            setClientId(preselectedClientId);
+            setStep(1); // Start at client step so user can confirm
+          }
+          setInitialized(true);
+        }
+      }
+      if (servicesRes.data) setServices(servicesRes.data as unknown as Service[]);
     };
 
     loadData();
-  }, []);
+  }, [preselectedClientId, initialized]);
 
   const totals = calcBillTotals(items);
 
@@ -102,21 +118,7 @@ export default function NewBillPage() {
   };
 
   return (
-    <main className="min-h-screen bg-cream">
-      <header className="bg-primary px-4 py-4 text-white">
-        <div className="flex items-center justify-between">
-          <div>
-            <Link
-              href="/billing"
-              className="text-sm text-primary-light hover:underline"
-            >
-              &larr; Annulla
-            </Link>
-            <h1 className="font-display text-lg font-bold">Nuova Fattura</h1>
-          </div>
-        </div>
-      </header>
-
+    <>
       {/* Progress */}
       <div className="border-b border-border bg-white px-4 py-3">
         <div className="flex items-center gap-2">
@@ -255,6 +257,38 @@ export default function NewBillPage() {
           </div>
         </div>
       </div>
+    </>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <div className="flex h-64 items-center justify-center">
+      <p className="text-muted">Caricamento...</p>
+    </div>
+  );
+}
+
+export default function NewBillPage() {
+  return (
+    <main className="min-h-screen bg-cream">
+      <header className="bg-primary px-4 py-4 text-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <Link
+              href="/billing"
+              className="text-sm text-primary-light hover:underline"
+            >
+              &larr; Annulla
+            </Link>
+            <h1 className="font-display text-lg font-bold">Nuova Fattura</h1>
+          </div>
+        </div>
+      </header>
+
+      <Suspense fallback={<LoadingFallback />}>
+        <NewBillContent />
+      </Suspense>
     </main>
   );
 }

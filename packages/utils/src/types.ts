@@ -80,3 +80,9 @@ export const DAYS_IT = [
 ] as const;
 
 export const DAYS_SHORT_IT = ['Do', 'Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'] as const;
+
+// Short month names in Italian
+export const MONTHS_SHORT_IT = [
+  'Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu',
+  'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic',
+] as const;
