@@ -95,8 +95,8 @@ Update checkboxes as each feature is completed. Add date and any notes.
 
 | # | Feature | Status | Completed | Notes |
 |---|---|---|---|---|
-| 06 | Booking engine — request + confirm | ⬜ Todo | — | — |
-| 07 | Horse roster — profiles + status | ⬜ Todo | — | — |
+| 06 | Booking engine — request + confirm | ✅ Done | Apr 2026 | Confirm/decline flow + availability |
+| 07 | Horse roster — profiles + status | ✅ Done | Apr 2026 | Status tracking + health notes + booking history |
 | 08 | Schedule — day/week view | ⬜ Todo | — | — |
 | 09 | Notifications — push + in-app | ⬜ Todo | — | — |
 

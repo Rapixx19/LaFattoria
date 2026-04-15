@@ -89,6 +89,28 @@ export default async function DashboardPage() {
             </div>
             <span className="text-2xl">📊</span>
           </Link>
+
+          <Link
+            href="/richieste"
+            className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
+          >
+            <div>
+              <h3 className="font-display font-bold text-primary">Richieste</h3>
+              <p className="text-sm text-muted">Gestisci prenotazioni</p>
+            </div>
+            <span className="text-2xl">📅</span>
+          </Link>
+
+          <Link
+            href="/cavalli"
+            className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
+          >
+            <div>
+              <h3 className="font-display font-bold text-primary">Cavalli</h3>
+              <p className="text-sm text-muted">Gestisci profili cavalli</p>
+            </div>
+            <span className="text-2xl">🐴</span>
+          </Link>
         </div>
       </div>
     </main>
