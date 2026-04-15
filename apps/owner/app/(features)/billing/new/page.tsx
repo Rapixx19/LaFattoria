@@ -130,7 +130,7 @@ export default function NewBillPage() {
                   idx === step
                     ? 'bg-primary text-white'
                     : idx < step
-                    ? 'bg-status-paid text-white'
+                    ? 'bg-paid text-white'
                     : 'bg-border text-muted'
                 }`}
               >
@@ -153,7 +153,7 @@ export default function NewBillPage() {
 
       <div className="p-4">
         {error && (
-          <div className="mb-4 rounded bg-status-overdue-bg p-3 text-sm text-status-overdue">
+          <div className="mb-4 rounded bg-overdue-bg p-3 text-sm text-overdue">
             {error}
           </div>
         )}
@@ -220,7 +220,7 @@ export default function NewBillPage() {
                   type="button"
                   onClick={handleSubmit}
                   disabled={loading || !canProceed()}
-                  className="rounded bg-status-paid px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-status-paid/90 active:scale-[0.97] disabled:opacity-50"
+                  className="rounded bg-paid px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-paid/90 active:scale-[0.97] disabled:opacity-50"
                 >
                   {loading ? 'Creazione...' : 'Crea Fattura'}
                 </button>

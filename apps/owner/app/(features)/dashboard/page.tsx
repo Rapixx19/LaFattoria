@@ -43,6 +43,20 @@ export default async function DashboardPage() {
             {user.email}
           </p>
         </div>
+
+        {/* Navigation */}
+        <div className="mt-4 grid gap-3">
+          <Link
+            href="/billing"
+            className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
+          >
+            <div>
+              <h3 className="font-display font-bold text-primary">Fatturazione</h3>
+              <p className="text-sm text-muted">Gestisci fatture e pagamenti</p>
+            </div>
+            <span className="text-2xl">📄</span>
+          </Link>
+        </div>
       </div>
     </main>
   );

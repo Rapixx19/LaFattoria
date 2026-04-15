@@ -13,9 +13,9 @@ interface PageProps {
 }
 
 const STATUS_STYLES = {
-  pending: 'bg-status-pending-bg text-status-pending',
-  paid: 'bg-status-paid-bg text-status-paid',
-  overdue: 'bg-status-overdue-bg text-status-overdue',
+  pending: 'bg-pending-bg text-pending',
+  paid: 'bg-paid-bg text-paid',
+  overdue: 'bg-overdue-bg text-overdue',
 } as const;
 
 const STATUS_LABELS = {

@@ -34,7 +34,7 @@ export function TotalsSummary({ totals, paidAmount }: TotalsSummaryProps) {
 
         {paidAmount !== undefined && paidAmount !== null && paidAmount > 0 && (
           <>
-            <div className="flex justify-between text-status-paid">
+            <div className="flex justify-between text-paid">
               <span>Vs. Versamento:</span>
               <span className="font-mono">{chf(paidAmount)}</span>
             </div>

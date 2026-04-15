@@ -166,7 +166,7 @@ export function StepServices({ services, items, onChange }: StepServicesProps) {
                   <button
                     type="button"
                     onClick={() => removeItem(idx)}
-                    className="mb-2 text-xs text-status-overdue hover:underline"
+                    className="mb-2 text-xs text-overdue hover:underline"
                   >
                     Rimuovi
                   </button>

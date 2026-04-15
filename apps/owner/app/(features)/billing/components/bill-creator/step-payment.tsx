@@ -77,7 +77,7 @@ export function StepPayment({
         </div>
         {hasPayment && (
           <>
-            <div className="mt-2 flex justify-between text-sm text-status-paid">
+            <div className="mt-2 flex justify-between text-sm text-paid">
               <span>Vs. Versamento:</span>
               <span className="font-mono">{chf(paidAmount ?? 0)}</span>
             </div>

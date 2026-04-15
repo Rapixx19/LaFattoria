@@ -56,7 +56,7 @@ export function MarkPaidForm({
       </h3>
 
       {error && (
-        <div className="mb-4 rounded bg-status-overdue-bg p-3 text-sm text-status-overdue">
+        <div className="mb-4 rounded bg-overdue-bg p-3 text-sm text-overdue">
           {error}
         </div>
       )}
@@ -104,7 +104,7 @@ export function MarkPaidForm({
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded bg-status-paid px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-status-paid/90 active:scale-[0.97] disabled:opacity-50"
+        className="w-full rounded bg-paid px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-paid/90 active:scale-[0.97] disabled:opacity-50"
       >
         {loading ? 'Salvataggio...' : 'Segna come Pagata'}
       </button>
