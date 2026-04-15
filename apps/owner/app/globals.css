@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+
+  /* Safe area insets for PWA */
+  :root {
+    --safe-area-inset-top: env(safe-area-inset-top, 0px);
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-inset-left: env(safe-area-inset-left, 0px);
+    --safe-area-inset-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+@layer components {
+  /* Status badge variants */
+  .badge-paid {
+    @apply bg-paid-bg text-paid;
+  }
+
+  .badge-pending {
+    @apply bg-pending-bg text-pending;
+  }
+
+  .badge-overdue {
+    @apply bg-overdue-bg text-overdue;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply rounded-lg bg-primary px-5 py-3 font-bold text-white transition-transform active:scale-[0.97];
+  }
+
+  .btn-secondary {
+    @apply rounded-lg bg-gold-light px-5 py-3 font-bold text-gold-dark transition-transform active:scale-[0.97];
+  }
+
+  /* Card styles */
+  .card {
+    @apply rounded-lg border border-border bg-white p-4 shadow-sm;
+  }
+
+  .card-elevated {
+    @apply rounded-lg border border-border bg-white p-4 shadow-md;
+  }
+
+  /* Focus ring for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  /* Safe area padding */
+  .pt-safe {
+    padding-top: var(--safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+
+  .px-safe {
+    padding-left: var(--safe-area-inset-left);
+    padding-right: var(--safe-area-inset-right);
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@lafattoria/ui": ["../../packages/ui/src"],
+      "@lafattoria/ui/*": ["../../packages/ui/src/*"],
+      "@lafattoria/supabase": ["../../packages/supabase/src"],
+      "@lafattoria/supabase/*": ["../../packages/supabase/src/*"],
+      "@lafattoria/utils": ["../../packages/utils/src"],
+      "@lafattoria/utils/*": ["../../packages/utils/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

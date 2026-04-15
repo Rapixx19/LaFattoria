@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "paths": {
+      "@lafattoria/ui": ["./packages/ui/src"],
+      "@lafattoria/ui/*": ["./packages/ui/src/*"],
+      "@lafattoria/supabase": ["./packages/supabase/src"],
+      "@lafattoria/supabase/*": ["./packages/supabase/src/*"],
+      "@lafattoria/utils": ["./packages/utils/src"],
+      "@lafattoria/utils/*": ["./packages/utils/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
