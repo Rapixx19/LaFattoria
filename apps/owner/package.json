@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@lafattoria/pdf": "*",
     "@lafattoria/supabase": "*",
     "@lafattoria/ui": "*",
     "@lafattoria/utils": "*",
