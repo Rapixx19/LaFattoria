@@ -10,4 +10,11 @@ export type {
   Tables,
   TablesInsert,
   TablesUpdate,
+  UserRole,
+  Profile,
+  Client,
+  Horse,
+  Service,
+  Bill,
+  Booking,
 } from './types';
