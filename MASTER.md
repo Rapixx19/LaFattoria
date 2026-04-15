@@ -83,13 +83,13 @@ Update checkboxes as each feature is completed. Add date and any notes.
 
 | # | Feature | Status | Completed | Notes |
 |---|---|---|---|---|
-| 01 | Auth — owner + trainer login | ⬜ Todo | — | — |
-| 02 | Billing — invoice creator | ⬜ Todo | — | Mensile + Extra |
-| 02a | Billing — payment status tracking | ⬜ Todo | — | pending/paid/overdue |
-| 03 | Clients — profiles + bill history | ⬜ Todo | — | — |
-| 04 | Services editor — CRUD price list | ⬜ Todo | — | — |
-| 05 | Revenue analytics — year view + chart | ⬜ Todo | — | — |
-| 05a | Revenue — batch import old bills | ⬜ Todo | — | — |
+| 01 | Auth — owner + trainer login | ✅ Done | Apr 2026 | Supabase Auth + RLS |
+| 02 | Billing — invoice creator | ✅ Done | Apr 2026 | Mensile + Extra |
+| 02a | Billing — payment status tracking | ✅ Done | Apr 2026 | pending/paid/overdue |
+| 03 | Clients — profiles + bill history | ✅ Done | Apr 2026 | With spend chart |
+| 04 | Services editor — CRUD price list | ✅ Done | Apr 2026 | With price history |
+| 05 | Revenue analytics — year view + chart | ✅ Done | Apr 2026 | Stacked bar chart |
+| 05a | Revenue — batch import old bills | ✅ Done | Apr 2026 | IMP-YYYY-NNN format |
 
 ### Phase 2 — Owner / Trainer PWA
 

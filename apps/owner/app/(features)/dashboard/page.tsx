@@ -78,6 +78,17 @@ export default async function DashboardPage() {
             </div>
             <span className="text-2xl">🏷️</span>
           </Link>
+
+          <Link
+            href="/revenue"
+            className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
+          >
+            <div>
+              <h3 className="font-display font-bold text-primary">Ricavi</h3>
+              <p className="text-sm text-muted">Analisi entrate annuali</p>
+            </div>
+            <span className="text-2xl">📊</span>
+          </Link>
         </div>
       </div>
     </main>
