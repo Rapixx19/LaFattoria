@@ -102,6 +102,17 @@ export default async function DashboardPage() {
           </Link>
 
           <Link
+            href="/schedule"
+            className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
+          >
+            <div>
+              <h3 className="font-display font-bold text-primary">Agenda</h3>
+              <p className="text-sm text-muted">Visualizza programma giornaliero</p>
+            </div>
+            <span className="text-2xl">🗓️</span>
+          </Link>
+
+          <Link
             href="/cavalli"
             className="flex items-center justify-between rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:border-primary hover:shadow-md"
           >
