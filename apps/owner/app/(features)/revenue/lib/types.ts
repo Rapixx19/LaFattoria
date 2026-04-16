@@ -62,3 +62,28 @@ export const CHART_COLORS = {
   pending: 'var(--color-pending)',
   overdue: 'var(--color-overdue)',
 } as const;
+
+/**
+ * Extracted invoice item from PDF parsing
+ */
+export interface ExtractedItem {
+  name: string;
+  qty: number;
+  price: number;
+  subtotal: number;
+}
+
+/**
+ * Invoice data extracted from PDF via AI parsing
+ */
+export interface ExtractedInvoice {
+  fileName: string;
+  clientName: string;
+  date: string;
+  items: ExtractedItem[];
+  total: number;
+  matchedClientId: string | null;
+  matchedServiceId: string | null;
+  status: 'ready' | 'needs_review' | 'error';
+  error?: string;
+}

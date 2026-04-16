@@ -1,6 +1,5 @@
 import { requireAuth } from '@/lib/auth';
 import { getRevenueByMonth, getRevenueByClient, getRevenueByService, getAvailableYears } from './lib/queries';
-import { getClients, getServices } from '../billing/lib/queries';
 import { YearSelector } from './components/year-selector';
 import { MonthChart } from './components/month-chart';
 import { RunningTotals } from './components/running-totals';
@@ -18,12 +17,10 @@ export default async function RevenuePage({ searchParams }: PageProps) {
   const years = await getAvailableYears();
   const currentYear = params.year ? parseInt(params.year, 10) : years[0] ?? new Date().getFullYear();
 
-  const [monthData, clientData, serviceData, clients, services] = await Promise.all([
+  const [monthData, clientData, serviceData] = await Promise.all([
     getRevenueByMonth(currentYear),
     getRevenueByClient(currentYear),
     getRevenueByService(currentYear),
-    getClients(),
-    getServices(),
   ]);
 
   return (
@@ -36,7 +33,7 @@ export default async function RevenuePage({ searchParams }: PageProps) {
           </div>
           <div className="flex items-center gap-3">
             <YearSelector years={years} currentYear={currentYear} />
-            <BatchImportButton clients={clients} services={services} />
+            <BatchImportButton />
           </div>
         </div>
       </header>
