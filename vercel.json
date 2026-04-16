@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd apps/owner && npm run build",
+  "outputDirectory": "apps/owner/.next",
+  "framework": "nextjs",
+  "installCommand": "npm install"
+}
